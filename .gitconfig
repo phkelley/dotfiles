@@ -1,0 +1,19 @@
+[user]
+    email = phkelley@microsoft.com
+    name = Philip Kelley
+
+[gc]
+    auto = 0
+
+[color "status"]
+    untracked = cyan normal bold
+    changed = cyan normal bold
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[credential]
+    helper = manager
