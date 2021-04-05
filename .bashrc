@@ -103,15 +103,22 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# xming
-export DISPLAY=`ip route show default | awk '{print $3}'`:0
+if [[ -z "$WSL_DISTRO_NAME" ]]; then
+    # Not running under Windows Subsystem for Linux.
+    :
+else
+    # Running under Windows Subsystem for Linux.
 
-# ssh auth socket
-export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
-ss -a | grep -q $SSH_AUTH_SOCK
-if [ $? -ne 0 ]; then
-    rm -f $SSH_AUTH_SOCK
-    (setsid nohup socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:$HOME/.ssh/wsl2-ssh-pageant.exe >/dev/null 2>&1 &)
+    # xming
+    export DISPLAY=`ip route show default | awk '{print $3}'`:0
+
+    # ssh auth socket
+    export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock
+    ss -a | grep -q $SSH_AUTH_SOCK
+    if [ $? -ne 0 ]; then
+        rm -f $SSH_AUTH_SOCK
+        (setsid nohup socat UNIX-LISTEN:$SSH_AUTH_SOCK,fork EXEC:$HOME/.ssh/wsl2-ssh-pageant.exe >/dev/null 2>&1 &)
+    fi
 fi
 
 # Don't clear the screen after quitting a manual page
