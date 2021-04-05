@@ -28,8 +28,9 @@ xterm*|rxvt*|putty*)
     ;;
 esac
 
-alias ls='ls -Glp'
-export LSCOLORS='fxcxcxdxbxegedabagacad'
+# Need to acquire gls via 'brew install coreutils'
+alias ls='gls --color=auto -lp --group-directories-first'
+export LS_COLORS='rs=0:di=35:ln=32:or=01;05;31:ex=33:su=37;41:sg=37;41:'
 
 alias up='cd ..'
 alias up2='cd ../..'
@@ -38,6 +39,11 @@ alias up4='cd ../../../..'
 alias up5='cd ../../../../..'
 alias up6='cd ../../../../../..'
 alias up7='cd ../../../../../../..'
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
