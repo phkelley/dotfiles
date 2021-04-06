@@ -2,6 +2,27 @@
     email = phkelley@microsoft.com
     name = Philip Kelley
 
+[diff]
+    tool = kdiff3
+
+[merge]
+    tool = kdiff3
+
+[mergetool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    keepBackup = false
+    trustExitCode = false
+
+[difftool "kdiff3"]
+    path = C:/Program Files/KDiff3/kdiff3.exe
+    keepBackup = false
+    trustExitCode = false
+
+[core]
+    editor = 'C:/Program Files (x86)/Vim/vim82/vi.exe'
+    whitespace = cr-at-eol
+    sshCommand = plink -load
+
 [gc]
     auto = 0
 

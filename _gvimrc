@@ -1,0 +1,5 @@
+set guifont=Consolas:h12
+set columns=275
+set lines=63
+set guioptions=
+winpos 25 25
