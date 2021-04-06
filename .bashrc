@@ -106,8 +106,11 @@ alias l='ls -CF'
 if [[ -z "$WSL_DISTRO_NAME" ]]; then
     # Not running under Windows Subsystem for Linux.
     :
+elif [[ "$HOSTTYPE" != "x86_64" ]]; then
+    # Not running on an AMD64 machine.
+    :
 else
-    # Running under Windows Subsystem for Linux.
+    # Running under Windows Subsystem for Linux on an AMD64 machine.
 
     # xming
     export DISPLAY=`ip route show default | awk '{print $3}'`:0
