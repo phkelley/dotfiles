@@ -106,7 +106,7 @@ alias l='ls -CF'
 if [[ -z "$WSL_DISTRO_NAME" ]]; then
     # Not running under Windows Subsystem for Linux.
     :
-elif [[ "$HOSTTYPE" != "x86_64" ]]; then
+elif [[ "$(uname -p)" != "x86_64" ]]; then
     # Not running on an AMD64 machine.
     :
 else
