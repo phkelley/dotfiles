@@ -1,0 +1,12 @@
+{
+    "remote.SSH.path": "C:\\Tools\\ssh-plink.cmd",
+    "workbench.startupEditor": "none",
+    "workbench.colorCustomizations": {
+        "terminal.ansiBrightMagenta":"#FFA0A0",
+        "terminal.ansiMagenta":"#FFA0A0",
+        "terminal.ansiBrightYellow":"#F0E68C",
+        "terminal.ansiYellow":"#F0E68C",
+    },
+    "editor.insertSpaces": true,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}
