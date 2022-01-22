@@ -23,6 +23,7 @@ hi colorcolumn ctermbg=235
 set number
 set backspace=indent,eol,start
 set clipboard=unnamed
+autocmd FileType make setlocal noexpandtab softtabstop=0
 autocmd InsertEnter * syn clear EOLWS | syn match EOLWS excludenl /\s\+\%#\@!$/
 autocmd InsertLeave * syn clear EOLWS | syn match EOLWS excludenl /\s\+$/
 highlight EOLWS ctermbg=red guibg=red
