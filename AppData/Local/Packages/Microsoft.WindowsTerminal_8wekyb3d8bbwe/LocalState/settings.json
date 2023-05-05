@@ -1,20 +1,21 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
     [
         {
-            "command": "closeTab",
-            "keys": 
-            [
-                "ctrl+w"
-            ]
+            "command":
+            {
+                "action": "closeTab"
+            },
+            "keys": "ctrl+w"
         },
         {
-            "command": "newTab",
-            "keys": 
-            [
-                "ctrl+t"
-            ]
+            "command":
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
         },
         {
             "command": 
@@ -47,45 +48,31 @@
     "copyOnSelect": true,
     "defaultProfile": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
     "initialCols": 270,
-    "initialRows": 46,
     "initialPosition": "0,0",
+    "initialRows": 46,
     "profiles": 
     {
-        "defaults": {                
+        "defaults":
+        {
             "font": 
             {
                 "face": "Consolas",
-                "size": 13
+                "size": 13.0
             }
         },
         "list": 
         [
             {
-                "commandline": "powershell.exe",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
-                "commandline": "cmd.exe",
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Command Prompt"
-            },
-            {
-                "commandline": "cmd.exe /k \"C:\\Program Files\\Microsoft Visual Studio\\2022\\Enterprise\\Common7\\Tools\\VsDevCmd.bat\" & cd /d C:\\Users\\%USERNAME%",
-                "guid": "{2e436a41-b902-4831-86e8-e282e1ebd494}",
-                "hidden": false,
-                "icon": "C:\\Users\\phkelley\\Pictures\\vs.ico",
-                "name": "Developer Command Prompt for VS 2022"
-            },
-            {
-                "colorScheme": "Ubuntu",
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": false,
-                "name": "Ubuntu-20.04",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "/home/%USERNAME%"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -94,10 +81,30 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "colorScheme": "Ubuntu",
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": false,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl",
+                "startingDirectory": "/home/%USERNAME%"
+            },
+            {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{eabbe92e-9bb4-5e93-8a1f-4b04096d9813}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{7144b69f-b8e1-53f1-8637-dd42a37c83e8}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
@@ -333,5 +340,6 @@
             "white": "#C0C0C0",
             "yellow": "#808000"
         }
-    ]
+    ],
+    "themes": []
 }
