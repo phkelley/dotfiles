@@ -1,4 +1,4 @@
-colorscheme desert256
+colorscheme sahara
 syntax on
 set nobackup
 set nowb
