@@ -5,6 +5,8 @@ case $- in
 esac
 
 set -o vi
+bind -m vi-command 'Control-l: clear-screen'
+bind -m vi-insert 'Control-l: clear-screen'
 
 shopt -s histappend
 shopt -s nocaseglob
@@ -28,3 +30,13 @@ alias up4='cd ../../../..'
 alias up5='cd ../../../../..'
 alias up6='cd ../../../../../..'
 alias up7='cd ../../../../../../..'
+
+resize() {
+  old=$(stty -g)
+  stty -echo
+  printf '\033[18t'
+  IFS=';' read -r -d t _ rows cols _
+  stty "$old"
+  stty cols "$cols" rows "$rows"
+  unset old cols rows
+}

@@ -6,6 +6,12 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# check for serial console and resize
+if [ $(tty) = /dev/tty00 ]; then
+    resize
+    TERM=putty-256color
+fi
+
 EDITOR=/usr/local/bin/vim
 LS_COLORS='rs=0:di=35:ln=32:or=01;05;31:ex=33:su=37;41:sg=37;41:'
 MANPAGER='less -X'
