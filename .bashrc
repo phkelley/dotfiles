@@ -18,6 +18,15 @@ HISTFILESIZE=$HISTSIZE
 
 PS1='\[\033[01;33m\]\u@\h\[\033[00m\]:\[\033[01;35m\]\w\[\033[00m\]\$ '
 
+# Title bar for the terminal emulator
+case "$TERM" in
+xterm*|rxvt*|putty*)
+    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
 alias sudo='doas'
 
 alias ls='gls --color=auto -lp --group-directories-first'

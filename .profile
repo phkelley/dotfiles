@@ -9,7 +9,6 @@ fi
 # check for serial console and resize
 if [ $(tty) = /dev/tty00 ]; then
     resize
-    TERM=putty-256color
 fi
 
 EDITOR=/usr/local/bin/vim
